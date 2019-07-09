@@ -18,6 +18,11 @@ import {
 
 import { AppModels } from './app.models';
 
+// CLARITY ICONS DEPENDENCY: THIS REQUIRED ONLY IN STACKBLITZ SEE #700
+import '@clr/icons';
+import '@clr/icons/shapes/all-shapes';
+//
+
 // TableDataProviderConfig provides proxy interfaces  
 // between list application models and hlc-clr-list / hlc-clr-table component models.
 // This proxy will be used for all tables inside the application, since app domain models must be the
