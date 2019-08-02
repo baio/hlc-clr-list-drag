@@ -6,7 +6,8 @@ import { SWAPIService } from './swapi.service';
 import * as R from 'ramda';
 
 // Provide table UI definition in js object
-const table: TableDescription = {
+const definition: Table.Definition = {
+  dragEnabled: true,
   cols: [
     {
       id: 'name',
@@ -23,13 +24,13 @@ const table: TableDescription = {
 
 @Component({
   selector: 'my-planets-table',
-  template: '<hlc-clr-table [dragEnabled]="true" (drop)="onDrop($event)" [table]="table" [dataProvider]="dataProvider"></hlc-clr-table>',
+  template: '<hlc-clr-table (drop)="onDrop($event)" [definition]="definition" [dataProvider]="dataProvider"></hlc-clr-table>',
   styleUrls: ['./palnets-table.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 
 })
 export class TableComponent {
-  readonly table = table;
+  readonly definition = definition;
   readonly dataProvider: Table.Data.DataProvider;
 
   @ViewChild(HlcClrTableComponent, { static: true }) tableComponent: HlcClrTableComponent;
